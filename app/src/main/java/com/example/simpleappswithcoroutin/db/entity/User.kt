@@ -1,4 +1,4 @@
-package com.example.customrecycler.db.entity
+package com.example.simpleappswithcoroutin.db.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
