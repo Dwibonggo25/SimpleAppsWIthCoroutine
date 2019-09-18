@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="fragment"
+                type="com.example.simpleappswithcoroutin.ui.home.HomeFragment" />
+
+        <variable
+                name="vm"
+                type="com.example.simpleappswithcoroutin.ui.home.HomeViewmodel" />
+    </data>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutDescription="@xml/scene_01"
+            app:showPaths="false"
+            tools:showPaths="true">
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivHeader" />
+
+        <ImageView
+                android:id="@+id/ivHeader"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@color/cardview_shadow_start_color"/>
+
+        <TextView
+                android:id="@+id/tvHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|left"
+                android:text="Banyumas"
+                app:layout_constraintBottom_toBottomOf="@+id/ivHeader"
+                app:layout_constraintStart_toStartOf="@+id/ivHeader"
+                app:layout_constraintTop_toTopOf="@+id/ivHeader" />
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+</layout>
