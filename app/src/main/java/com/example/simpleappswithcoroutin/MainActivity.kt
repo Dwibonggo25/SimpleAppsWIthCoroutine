@@ -1,4 +1,4 @@
-package com.example.customrecycler
+package com.example.simpleappswithcoroutin
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,8 +7,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
-import com.example.customrecycler.databinding.ActivityMainBinding
-import com.example.customrecycler.ui.home.HomeViewmodel
+import com.example.simpleappswithcoroutin.databinding.ActivityMainBinding
+import com.example.simpleappswithcoroutin.ui.home.HomeViewmodel
 import dagger.android.AndroidInjection
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector

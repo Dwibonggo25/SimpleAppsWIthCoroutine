@@ -1,4 +1,4 @@
-package com.example.customrecycler.di
+package com.example.simpleappswithcoroutin.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

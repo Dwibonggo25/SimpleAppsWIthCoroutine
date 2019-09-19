@@ -1,9 +1,9 @@
-package com.example.customrecycler.db.dao
+package com.example.simpleappswithcoroutin.db.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
-import com.example.customrecycler.db.entity.User
+import com.example.simpleappswithcoroutin.db.entity.User
 
 @Dao
 interface UserDao {

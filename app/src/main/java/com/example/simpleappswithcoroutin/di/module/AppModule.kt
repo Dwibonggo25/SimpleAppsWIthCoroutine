@@ -1,11 +1,11 @@
-package com.example.customrecycler.di.module
+package com.example.simpleappswithcoroutin.di.module
 
 import android.app.Application
 import android.content.Context
 import androidx.room.Room
-import com.example.customrecycler.SimpleApp
-import com.example.customrecycler.AppDatabase
-import com.example.customrecycler.api.ApiService
+import com.example.simpleappswithcoroutin.SimpleApp
+import com.example.simpleappswithcoroutin.AppDatabase
+import com.example.simpleappswithcoroutin.api.ApiService
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit

@@ -1,4 +1,4 @@
-package com.example.customrecycler
+package com.example.simpleappswithcoroutin
 
 import org.junit.Test
 

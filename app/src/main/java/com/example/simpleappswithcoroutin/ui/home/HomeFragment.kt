@@ -1,4 +1,4 @@
-package com.example.customrecycler.ui.home
+package com.example.simpleappswithcoroutin.ui.home
 
 import android.content.Context
 import android.os.Bundle
@@ -11,9 +11,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.customrecycler.R
-import com.example.customrecycler.databinding.FragmentSplashScreenBinding
-import com.example.customrecycler.db.entity.Test
+import com.example.simpleappswithcoroutin.R
+import com.example.simpleappswithcoroutin.databinding.HomeFragmentBinding
+import com.example.simpleappswithcoroutin.model.Todo
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
@@ -24,7 +24,7 @@ class HomeFragment : Fragment() {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
-    lateinit var binding: FragmentSplashScreenBinding
+    lateinit var binding: HomeFragmentBinding
 
     private lateinit var adapter: SplashScreenAdapter
 
@@ -35,8 +35,7 @@ class HomeFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(HomeViewmodel::class.java)
-        binding = DataBindingUtil.inflate(inflater,
-            R.layout.fragment_splash_screen, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.home_fragment, container, false)
         binding.apply {
             fragment = this@HomeFragment
             vm = viewModel
@@ -52,7 +51,8 @@ class HomeFragment : Fragment() {
 
         initRecyclerView()
         viewModel.userLiveData.observe (this, Observer {
-        //    refreshData(it)
+          // refreshData(it)
+            binding.tvHeader.setText(it.title)
         })
 
     }
@@ -64,7 +64,7 @@ class HomeFragment : Fragment() {
         binding.recyclerview.adapter = adapter
     }
 
-    fun refreshData(data: List<Test>) {
+    fun refreshData(data: List<Todo>) {
         adapter.submitList(data)
     }
 }

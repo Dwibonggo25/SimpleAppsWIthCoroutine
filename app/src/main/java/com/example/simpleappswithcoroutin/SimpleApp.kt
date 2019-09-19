@@ -1,8 +1,8 @@
-package com.example.customrecycler
+package com.example.simpleappswithcoroutin
 
 import android.app.Activity
 import android.app.Application
-import com.example.customrecycler.di.component.DaggerAppComponent
+import com.example.simpleappswithcoroutin.di.component.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector

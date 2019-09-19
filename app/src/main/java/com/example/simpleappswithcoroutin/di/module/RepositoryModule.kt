@@ -1,10 +1,11 @@
-package com.example.customrecycler.di.module
+package com.example.simpleappswithcoroutin.di.module
 
-import com.example.customrecycler.AppDatabase
-import com.example.customrecycler.api.ApiService
-import com.example.customrecycler.db.dao.TestDao
-import com.example.customrecycler.db.dao.UserDao
-import com.example.customrecycler.repository.HomeRepository
+import com.example.simpleappswithcoroutin.AppDatabase
+import com.example.simpleappswithcoroutin.api.ApiService
+import com.example.simpleappswithcoroutin.db.dao.FoodsDao
+import com.example.simpleappswithcoroutin.db.dao.TestDao
+import com.example.simpleappswithcoroutin.repository.HomeRepository
+import com.example.simpleappswithcoroutin.ui.listfood.ListDraftMenuRepository
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -22,7 +23,15 @@ class RepositoryModule {
 
     @Provides
     @Singleton
+    fun providesFoodsDao (db: AppDatabase) = db.foodsDao()
+
+    @Provides
+    @Singleton
     fun providesHomeRepository (testDao: TestDao, apiService: ApiService): HomeRepository = HomeRepository (testDao, apiService)
+
+    @Provides
+    @Singleton
+    fun providesListDraftMenuRepository (foodsDao: FoodsDao, apiService: ApiService): ListDraftMenuRepository = ListDraftMenuRepository (foodsDao, apiService)
 
 
 }

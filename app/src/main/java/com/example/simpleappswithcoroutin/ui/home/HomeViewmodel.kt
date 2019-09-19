@@ -1,31 +1,19 @@
-package com.example.customrecycler.ui.home
+package com.example.simpleappswithcoroutin.ui.home
 
 import androidx.lifecycle.*
-import com.example.customrecycler.db.entity.Test
-import com.example.customrecycler.model.SplashScreenResponse
-import com.example.customrecycler.model.Todo
-import com.example.customrecycler.repository.HomeRepository
-import io.reactivex.android.schedulers.AndroidSchedulers
+import com.example.simpleappswithcoroutin.db.entity.Test
+import com.example.simpleappswithcoroutin.repository.HomeRepository
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.disposables.Disposable
-import io.reactivex.schedulers.Schedulers
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
-class HomeViewmodel @Inject constructor(private val repository: HomeRepository) :
-    ViewModel() {
+class HomeViewmodel @Inject constructor(private val repository: HomeRepository) : ViewModel() {
 
-    private var mCompositeDisposable = CompositeDisposable()
-
-    private val _isData = MutableLiveData<List<Test>>()
-    val isData: LiveData<List<Test>>
-        get() = _isData
+    private val _spinner = MutableLiveData<Boolean>()
+    val spinner: LiveData<Boolean>
+        get() = _spinner
 
     val userLiveData = liveData {
-        val user =  repository.fetchALlData(1)
+        val user = repository.fetchALlData(1)
         emit(user)
     }
 

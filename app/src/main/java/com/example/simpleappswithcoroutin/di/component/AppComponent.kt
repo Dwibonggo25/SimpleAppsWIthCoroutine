@@ -1,7 +1,7 @@
-package com.example.customrecycler.di.component
+package com.example.simpleappswithcoroutin.di.component
 
-import com.example.customrecycler.SimpleApp
-import com.example.customrecycler.di.module.*
+import com.example.simpleappswithcoroutin.SimpleApp
+import com.example.simpleappswithcoroutin.di.module.*
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule

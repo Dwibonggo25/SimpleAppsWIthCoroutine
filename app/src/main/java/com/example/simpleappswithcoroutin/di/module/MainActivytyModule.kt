@@ -1,7 +1,7 @@
-package com.example.customrecycler.di.module
+package com.example.simpleappswithcoroutin.di.module
 
 import dagger.Provides
-import com.example.customrecycler.MainActivity
+import com.example.simpleappswithcoroutin.MainActivity
 import dagger.Module
 
 

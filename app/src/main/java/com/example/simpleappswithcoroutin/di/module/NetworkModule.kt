@@ -1,7 +1,7 @@
-package com.example.customrecycler.di.module
+package com.example.simpleappswithcoroutin.di.module
 
 import android.app.Application
-import com.example.customrecycler.BASE_URL
+import com.example.simpleappswithcoroutin.BASE_URL
 import dagger.Module
 import dagger.Provides
 import okhttp3.Cache

@@ -1,10 +1,11 @@
-package com.example.customrecycler.di.module
+package com.example.simpleappswithcoroutin.di.module
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.customrecycler.di.ViewModelFactory
-import com.example.customrecycler.di.ViewModelKey
-import com.example.customrecycler.ui.home.HomeViewmodel
+import com.example.simpleappswithcoroutin.di.ViewModelFactory
+import com.example.simpleappswithcoroutin.di.ViewModelKey
+import com.example.simpleappswithcoroutin.ui.home.HomeViewmodel
+import com.example.simpleappswithcoroutin.ui.listfood.ListDraftMenuViewmodel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -19,5 +20,10 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(HomeViewmodel::class)
     internal abstract fun providesHomeViewmodel(viewModel : HomeViewmodel) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ListDraftMenuViewmodel::class)
+    internal abstract fun providesListDraftMenuViewmodel(viewModel : ListDraftMenuViewmodel) : ViewModel
 
 }
