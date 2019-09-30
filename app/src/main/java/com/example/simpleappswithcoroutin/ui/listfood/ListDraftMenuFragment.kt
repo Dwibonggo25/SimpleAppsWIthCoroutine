@@ -46,7 +46,13 @@ class ListDraftMenuFragment : Fragment() {
         binding.foodsList.adapter = adapter
         viewListFood (adapter)
 
+        setWorkManager()
+
         super.onViewCreated(view, savedInstanceState)
+    }
+
+    private fun setWorkManager() {
+
     }
 
     private fun viewListFood(adapter: ListFoodAdapter) {

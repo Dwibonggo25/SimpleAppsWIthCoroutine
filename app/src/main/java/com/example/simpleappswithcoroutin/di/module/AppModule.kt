@@ -5,6 +5,7 @@ import android.content.Context
 import androidx.room.Room
 import com.example.simpleappswithcoroutin.SimpleApp
 import com.example.simpleappswithcoroutin.AppDatabase
+import com.example.simpleappswithcoroutin.DATABASE_NAME
 import com.example.simpleappswithcoroutin.api.ApiService
 import dagger.Module
 import dagger.Provides
@@ -28,6 +29,7 @@ class AppModule{
 
     @Provides
     @Singleton
-    fun providesDatabase (context: Context) = Room.databaseBuilder(context, AppDatabase::class.java, "simpleapp.db").fallbackToDestructiveMigration().build()
+    fun providesDatabase (context: Context) = Room.databaseBuilder(context, AppDatabase::class.java, DATABASE_NAME).fallbackToDestructiveMigration().build()
+
 
 }
