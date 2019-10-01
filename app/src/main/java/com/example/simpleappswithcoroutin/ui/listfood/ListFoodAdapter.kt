@@ -1,7 +1,9 @@
 package com.example.simpleappswithcoroutin.ui.listfood
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -19,6 +21,19 @@ class ListFoodAdapter  : ListAdapter <Foods, ListFoodAdapter.ViewHolder> (DiffCa
     }
 
     class ViewHolder(private val binding: ItemListFoodBinding) : RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            binding.setClickListener {
+                binding.foods?.let {foods ->
+                    navigateToPlant(foods, it)
+                }
+            }
+        }
+
+        private fun navigateToPlant(foods: Foods, it: View) {
+            val action  = ListDraftMenuFragmentDirections.actionDetailFoodMenuLaunch(foods.foodsId)
+            it.findNavController().navigate(action)
+        }
 
         fun bind(item: Foods) {
             binding.apply {

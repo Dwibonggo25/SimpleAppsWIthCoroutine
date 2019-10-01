@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.simpleappswithcoroutin.di.ViewModelFactory
 import com.example.simpleappswithcoroutin.di.ViewModelKey
+import com.example.simpleappswithcoroutin.ui.detailfoods.DetailFoodsMenuViewmodel
 import com.example.simpleappswithcoroutin.ui.home.HomeViewmodel
 import com.example.simpleappswithcoroutin.ui.listfood.ListDraftMenuViewmodel
 import dagger.Binds
@@ -25,5 +26,10 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(ListDraftMenuViewmodel::class)
     internal abstract fun providesListDraftMenuViewmodel(viewModel : ListDraftMenuViewmodel) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(DetailFoodsMenuViewmodel::class)
+    internal abstract fun providesDetailFoodsMenuViewmodel(viewModel : DetailFoodsMenuViewmodel) : ViewModel
 
 }

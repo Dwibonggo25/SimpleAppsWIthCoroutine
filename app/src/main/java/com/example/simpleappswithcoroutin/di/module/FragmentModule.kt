@@ -1,5 +1,6 @@
 package com.example.simpleappswithcoroutin.di.module
 
+import com.example.simpleappswithcoroutin.ui.detailfoods.DetailFoodsMenuFragment
 import com.example.simpleappswithcoroutin.ui.home.HomeFragment
 import com.example.simpleappswithcoroutin.ui.listfood.ListDraftMenuFragment
 import dagger.Module
@@ -14,4 +15,6 @@ abstract class FragmentModule {
     @ContributesAndroidInjector
     abstract fun contributesListDraftMenuFragment(): ListDraftMenuFragment
 
+    @ContributesAndroidInjector
+    abstract fun contributesDetailFoodsMenuFragment(): DetailFoodsMenuFragment
 }

@@ -15,4 +15,8 @@ interface FoodsDao {
 
     @Insert (onConflict =  OnConflictStrategy.REPLACE)
     suspend fun insertAll (foods: List<Foods>)
+
+    @Query ("SELECT * FROM foods WHERE id =:foodId")
+    fun getFoodInfo (foodId: Long) : LiveData <Foods>
+
 }

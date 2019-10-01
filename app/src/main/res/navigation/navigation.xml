@@ -13,5 +13,18 @@
             android:id="@+id/listDraftMenuFragment"
             android:name="com.example.simpleappswithcoroutin.ui.listfood.ListDraftMenuFragment"
             android:label="fragment_list_draft_menu"
-            tools:layout="@layout/fragment_list_draft_menu" />
+            tools:layout="@layout/fragment_list_draft_menu" >
+        <action
+                android:id="@+id/actionDetailFoodMenuLaunch"
+                app:destination="@id/detailFoodsMenu" />
+    </fragment>
+    <fragment
+            android:id="@+id/detailFoodsMenu"
+            android:name="com.example.simpleappswithcoroutin.ui.detailfoods.DetailFoodsMenuFragment"
+            android:label="fragment_detail_foods_menu"
+            tools:layout="@layout/fragment_detail_foods_menu" >
+        <argument
+                android:name="foodId"
+                app:argType="long" />
+    </fragment>
 </navigation>

@@ -11,4 +11,6 @@ class ListDraftMenuRepository @Inject constructor(private val foodsDao: FoodsDao
     fun getFoodsList () = foodsDao.getFoods()
 
     suspend fun insertAllFoods (list: List<Foods>) = foodsDao.insertAll(list)
+
+    fun getFoodInfo (id: Long) = foodsDao.getFoodInfo(id)
 }

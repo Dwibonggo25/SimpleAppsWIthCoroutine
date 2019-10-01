@@ -33,5 +33,4 @@ class RepositoryModule {
     @Singleton
     fun providesListDraftMenuRepository (foodsDao: FoodsDao, apiService: ApiService): ListDraftMenuRepository = ListDraftMenuRepository (foodsDao, apiService)
 
-
 }
