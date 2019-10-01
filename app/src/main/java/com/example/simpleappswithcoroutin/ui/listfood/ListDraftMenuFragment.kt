@@ -7,8 +7,12 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.*
+import androidx.work.Constraints
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
 import com.example.simpleappswithcoroutin.R
 import com.example.simpleappswithcoroutin.databinding.FragmentListDraftMenuBinding
+import com.example.simpleappswithcoroutin.worker.FoodsWorker
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
@@ -52,7 +56,15 @@ class ListDraftMenuFragment : Fragment() {
     }
 
     private fun setWorkManager() {
+        val constraints : Constraints = Constraints.Builder()
+            .setRequiresCharging(true)
+            .build()
 
+        val workerTest = OneTimeWorkRequestBuilder<FoodsWorker>()
+            .setConstraints(constraints)
+            .build()
+
+        WorkManager.getInstance().enqueue(workerTest)
     }
 
     private fun viewListFood(adapter: ListFoodAdapter) {

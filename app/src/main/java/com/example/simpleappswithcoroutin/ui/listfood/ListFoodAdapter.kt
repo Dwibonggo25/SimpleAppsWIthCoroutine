@@ -22,6 +22,7 @@ class ListFoodAdapter  : ListAdapter <Foods, ListFoodAdapter.ViewHolder> (DiffCa
 
         fun bind(item: Foods) {
             binding.apply {
+                foods = item
                 binding.executePendingBindings()
             }
         }
